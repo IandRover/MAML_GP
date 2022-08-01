@@ -15,11 +15,11 @@ def load_data(bs=100):
     return train_xs, train_xq, train_ys, train_yq, test_xs, test_xq, test_ys, test_yq
 
 main_dir = "./data/eva_data/miniimagenet/npy"
-def load_more_data(bs=100):
-    train_xs = numpy.concatenate([numpy.load(main_dir+f"/train_xs_100-{i}.npy") for i in range(3)], axis=0) 
-    train_xq = numpy.concatenate([numpy.load(main_dir+f"/train_xq_100-{i}.npy") for i in range(3)], axis=0) 
-    train_ys = numpy.concatenate([numpy.load(main_dir+f"/train_ys_100-{i}.npy") for i in range(3)], axis=0) 
-    train_yq = numpy.concatenate([numpy.load(main_dir+f"/train_yq_100-{i}.npy") for i in range(3)], axis=0) 
+def load_more_data(num_batches = 3):
+    train_xs = numpy.concatenate([numpy.load(main_dir+f"/train_xs_100-{i}.npy") for i in range(num_batches)], axis=0) 
+    train_xq = numpy.concatenate([numpy.load(main_dir+f"/train_xq_100-{i}.npy") for i in range(num_batches)], axis=0) 
+    train_ys = numpy.concatenate([numpy.load(main_dir+f"/train_ys_100-{i}.npy") for i in range(num_batches)], axis=0) 
+    train_yq = numpy.concatenate([numpy.load(main_dir+f"/train_yq_100-{i}.npy") for i in range(num_batches)], axis=0) 
 
     test_xs = numpy.load("./data/test_xs_100.npy")
     test_xq = numpy.load("./data/test_xq_100.npy")
