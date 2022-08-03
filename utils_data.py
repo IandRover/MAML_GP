@@ -34,3 +34,5 @@ def one_hot(a):
     return b
 
 def mask(Kernel, num_batch, na, nb): return np.multiply(Kernel, np.kron(np.eye(num_batch),np.ones((na,nb))))
+
+def df_append(df, data): df.loc[len(df)] = data
